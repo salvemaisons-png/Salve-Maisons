@@ -11,7 +11,21 @@ export default defineConfig({
       overlay: false,
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: "spa-fallback",
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          // If the request doesn't have a file extension, serve index.html (SPA fallback)
+          if (!req.url?.includes(".")) {
+            req.url = "/";
+          }
+          next();
+        });
+      },
+    },
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
