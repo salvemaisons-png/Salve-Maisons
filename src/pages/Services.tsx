@@ -9,16 +9,16 @@ const ServicesPage = () => {
 
   return (
     <Layout
-      title="Spa Treatments & Prices | Salve Maison Lekki"
-      description="Explore our massage, facial, body and beauty treatments in Lekki, Lagos. Transparent pricing and one-tap WhatsApp booking."
+      title="Mobile Spa Treatments & Prices | Salve Maison"
+      description="Explore Salve Maison massage, facial, body and beauty treatments, delivered to your home, hotel, office or private event."
     >
       <section className="bg-gradient-soft py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
           <p className="kicker text-primary mb-4">Treatment Menu</p>
           <h1 className="font-display text-4xl md:text-6xl font-bold">Every service at Salve Maison</h1>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
-            Prices are per guest. Ask us about combining treatments — we're happy to build a ritual
-            around your time and budget.
+            Prices are per guest. Choose your preferred location, then let us create a treatment
+            ritual around your time, needs and occasion.
           </p>
         </div>
       </section>

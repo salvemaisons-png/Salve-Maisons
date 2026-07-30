@@ -10,6 +10,7 @@ const links = [
   { to: "/services", label: "Treatments" },
   { to: "/packages", label: "Packages" },
   { to: "/about", label: "About" },
+  { to: "/faq", label: "FAQs" },
   { to: "/contact", label: "Visit & Book" },
 ];
 

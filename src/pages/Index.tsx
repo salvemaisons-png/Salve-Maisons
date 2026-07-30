@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import heroImg from "@/assets/spa-hero.jpg";
-import massageImg from "@/assets/spa-massage.jpg";
-import facialImg from "@/assets/spa-facial.jpg";
-import detailImg from "@/assets/spa-detail.jpg";
+import mobileSpaHero from "@/assets/mobile-spa-hero.png";
+import mobileMassageTreatment from "@/assets/mobile-massage-treatment.png";
+import therapistArrival from "@/assets/therapist-arrival.png";
+import treatmentSetup from "@/assets/treatment-setup.png";
+import spaEssentials from "@/assets/spa-essentials.png";
+import prenatalTreatment from "@/assets/prenatal-treatment.png";
 import { SALVE, packages, services, testimonials, waLink } from "@/data/services";
 import { WhatsAppIcon } from "@/components/BrandIcons";
 
@@ -20,11 +22,12 @@ const testimonialImages = ["/morocco.jpg", "/france.jpg", "/asia-temple.jpg"];
 
 const Index = () => {
   const featured = services.slice(0, 6);
+  const featuredPackages = packages.filter((item) => item.collection === "Signature Rituals");
 
   return (
     <Layout
-      title="Salve Maison — Luxury Spa & Wellness in Lekki, Lagos"
-      description="Massage, facials and body rituals at Salve Maison, a luxury day spa in Lekki, Lagos. Book instantly on WhatsApp."
+      title="Salve Maison — Luxury Mobile Spa & Wellness"
+      description="Luxury spa and wellness experiences delivered to your home, hotel, office or private event. Book Salve Maison on WhatsApp."
     >
       {/* Hero */}
       <section className="overflow-hidden bg-sage-deep px-4 py-8 text-[#f8f4ec] md:px-8 md:py-10">
@@ -36,8 +39,8 @@ const Index = () => {
             className="font-display font-normal uppercase leading-[0.7] tracking-[-0.07em]"
             style={{ fontSize: "clamp(4.2rem, 11.3vw, 11.8rem)" }}
           >
-            <span className="block">Wellness within</span>
-            <span className="block text-right pr-[4%]">reach.</span>
+            <span className="block">Luxury wellness,</span>
+            <span className="block text-right pr-[4%]">delivered to you.</span>
           </motion.h1>
 
           <motion.div
@@ -48,8 +51,8 @@ const Index = () => {
           >
             <div className="relative min-h-[245px] md:min-h-[330px] overflow-hidden">
               <img
-                src={massageImg}
-                alt="Massage treatment at Salve Maison"
+                src={mobileSpaHero}
+                alt="Salve Maison mobile spa treatment room"
                 width={1200}
                 height={900}
                 className="absolute inset-0 h-full w-full object-cover"
@@ -69,22 +72,22 @@ const Index = () => {
               <div className="absolute right-0 top-0 h-full w-[36%] bg-sage/35" />
               <div className="absolute right-[8%] top-0 h-full w-10 bg-sage/30 [clip-path:ellipse(35%_50%_at_50%_50%)]" />
               <img
-                src={facialImg}
-                alt="Skincare ritual at Salve Maison"
+                src={treatmentSetup}
+                alt="Therapist preparing a mobile massage setup"
                 width={1200}
                 height={900}
                 className="absolute left-[18%] top-[8%] h-[84%] w-[30%] rounded-[50%] object-cover"
               />
               <img
-                src={heroImg}
-                alt="Salve Maison treatment space"
+                src={prenatalTreatment}
+                alt="Prenatal massage treatment by Salve Maison"
                 width={1600}
                 height={1100}
                 className="absolute left-[51%] top-[13%] h-[74%] w-[18%] rounded-[50%] object-cover"
               />
               <img
-                src={detailImg}
-                alt="Spa details at Salve Maison"
+                src={spaEssentials}
+                alt="Salve Maison spa essentials"
                 width={1200}
                 height={900}
                 className="absolute right-[4%] top-[17%] h-[65%] w-[13%] rounded-[50%] object-cover opacity-75"
@@ -104,34 +107,33 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-14 items-center">
           <motion.div {...fade}>
-            <p className="kicker text-primary mb-4">Welcome</p>
+            <p className="kicker text-primary mb-4">Welcome to Salve Maison</p>
             <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
-              Rest is not a luxury. It is maintenance.
+              Luxury is not where you go. It is how you are cared for.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Salve Maison was created for people who give a lot and rarely stop. Behind our doors
-              in Lekki, you will find soft light, warm towels and unhurried therapists who make
-              space for you to properly switch off. Every treatment is tailored to how your body
-              feels on the day, whether you need deep relief, gentle care or a quiet reset.
+              Salve Maison brings exceptional spa and wellness experiences directly to your home,
+              hotel, office or private residence. We transform the space around you into a calm,
+              considered sanctuary, so relaxation can begin the moment we arrive.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Every ritual begins with a short consultation, allowing us to understand your needs
-              and make thoughtful recommendations. It ends with tea and a little time to settle
-              back into yourself, so nothing is rushed — least of all you.
+              Every visit is thoughtfully curated around professionalism, discretion and genuine
+              care. Whether you need to reset after a demanding week, prepare for a celebration or
+              create a memorable wellness moment for your team, we bring everything needed to you.
             </p>
             <div className="mt-8 grid sm:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Clean products",
-                  text: "Gentle, skin-first formulations chosen to nourish and comfort your skin.",
+                  title: "Luxury, wherever you are",
+                  text: "Premium spa care delivered to your preferred location, on your terms.",
                 },
                 {
-                  title: "Private suites",
-                  text: "Discreet, spotless rooms where every detail is arranged for your comfort.",
+                  title: "Thoughtful setup",
+                  text: "Luxury linens, calming details and professional equipment brought to you.",
                 },
                 {
-                  title: "On your time",
-                  text: "Open late, seven days a week, so self-care can fit around your life.",
+                  title: "Personalised care",
+                  text: "Each ritual is tailored to your body, schedule and wellbeing needs.",
                 },
               ].map((f) => (
                 <div key={f.title} className="border-t border-border pt-4">
@@ -145,8 +147,8 @@ const Index = () => {
             <motion.img
               whileHover={{ scale: 1.025 }}
               transition={{ duration: 0.45 }}
-              src={massageImg}
-              alt="Warm stones and towels prepared for a massage"
+              src={therapistArrival}
+              alt="Salve Maison therapist arriving with mobile spa equipment"
               width={1200}
               height={900}
               loading="lazy"
@@ -155,8 +157,8 @@ const Index = () => {
             <motion.img
               whileHover={{ scale: 1.025 }}
               transition={{ duration: 0.45 }}
-              src={detailImg}
-              alt="Spa still life with towels, candles and rose petals"
+              src={treatmentSetup}
+              alt="Mobile massage bed prepared with luxury linens"
               width={1200}
               height={900}
               loading="lazy"
@@ -174,8 +176,8 @@ const Index = () => {
             <h2 className="font-display text-3xl md:text-5xl font-bold">Signature treatments</h2>
             <p className="mt-4 text-muted-foreground">
               From restorative massage to glow-boosting facials and full-body rituals, every
-              treatment is delivered with care in a private, peaceful room. Choose what your body
-              needs today, or let our team guide you toward the right ritual.
+              treatment is delivered with care in the comfort of your chosen space. Tell us what
+              you need, and our team will help create the right experience for you.
             </p>
           </motion.div>
           <div className="treatment-grid grid sm:grid-cols-2 lg:grid-cols-3">
@@ -211,15 +213,15 @@ const Index = () => {
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div {...fade} className="mb-14 max-w-2xl">
-            <p className="kicker text-primary mb-4">Spa Days</p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold">Packages worth clearing your day for</h2>
+            <p className="kicker text-primary mb-4">Signature Rituals</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold">Wellness, thoughtfully brought together</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Our spa packages bring together complementary treatments for a longer, more complete
-              escape. Settle in, take your time and leave feeling rested from head to toe.
+              Our curated rituals bring together complementary treatments for a complete, luxurious
+              escape — whether you are celebrating, recovering or simply making time for yourself.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {packages.map((p, i) => (
+            {featuredPackages.map((p, i) => (
               <motion.div
                 key={p.id}
                 {...fade}
@@ -293,18 +295,18 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <motion.div {...fade} className="max-w-4xl mx-auto px-4 md:px-8 text-center">
           <img
-            src={facialImg}
-            alt="Skincare products used in Salve Maison facials"
+            src={mobileMassageTreatment}
+            alt="Massage treatment by Salve Maison"
             width={1200}
             height={900}
             loading="lazy"
             className=" w-full h-64 object-cover mb-10 shadow-soft"
           />
           <p className="kicker text-primary mb-4">Booking</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold">Your appointment is one message away</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold">Luxury wellness, wherever you are</h2>
           <p className="mt-5 text-muted-foreground">
-            Send us a WhatsApp message with the treatment and time you'd like. We reply quickly and
-            will help you choose if you're unsure.
+            Tell us where and when you would like to unwind. We will bring the therapists, premium
+            products and thoughtful details needed for an effortless spa experience.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <a

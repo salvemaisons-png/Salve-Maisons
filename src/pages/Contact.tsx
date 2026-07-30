@@ -16,16 +16,16 @@ const Contact = () => {
 
   return (
     <Layout
-      title="Visit & Book | Salve Maison Spa, Lekki Lagos"
-      description="Book a treatment at Salve Maison in Lekki, Lagos. WhatsApp 0808 915 0333, opening hours, location and enquiry form."
+      title="Book a Mobile Spa Experience | Salve Maison"
+      description="Book a luxury Salve Maison spa experience at your home, hotel, office or private event."
     >
       <section className="bg-gradient-soft py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <p className="kicker text-primary mb-4">Visit & Book</p>
-          <h1 className="font-display text-4xl md:text-6xl font-bold">We'd love to host you</h1>
+          <p className="kicker text-primary mb-4">Book Your Experience</p>
+          <h1 className="font-display text-4xl md:text-6xl font-bold">We'd love to come to you</h1>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto">
-            Bookings are confirmed on WhatsApp. Fill in the short form and it will open a ready-made
-            message, or reach us directly using the details below.
+            Tell us where you would like your experience. Fill in the short form and it will open a
+            ready-made WhatsApp message for our team.
           </p>
         </div>
       </section>
