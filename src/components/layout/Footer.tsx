@@ -1,0 +1,88 @@
+import { Link } from "react-router-dom";
+import { SALVE, waLink } from "@/data/services";
+import { WhatsAppIcon } from "@/components/BrandIcons";
+
+const Footer = () => {
+  return (
+    <footer
+      className="reference-footer overflow-hidden"
+      style={{ backgroundColor: "hsl(var(--sage-deep))", color: "hsl(var(--cream))" }}
+    >
+      <div className="border-b border-[#f5f0e7]/70 pt-8 md:pt-10">
+        <p
+          className="font-display font-medium whitespace-nowrap -translate-x-[10%] md:-translate-x-[7%]"
+          style={{ fontSize: "clamp(6rem, 14vw, 13.5rem)", lineHeight: 0.62, letterSpacing: "-0.07em" }}
+        >
+          CONTACTS · COME REST ·
+        </p>
+      </div>
+
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 pt-3 flex items-start justify-between gap-5 text-[7px] md:text-[8px] uppercase tracking-[-0.01em] leading-tight">
+        <p className="max-w-[130px]">In here to help you turn your self-care into a lasting ritual.</p>
+        <a href={waLink()} target="_blank" rel="noreferrer" className="text-center hover:text-rose transition-colors">
+          Just drop<br />a message
+        </a>
+        <p className="max-w-[88px] text-right">© {new Date().getFullYear()} all rights reserved</p>
+      </div>
+
+      <div className="relative max-w-[1440px] mx-auto h-[355px] md:h-[390px] px-4 md:px-6">
+        <div className="absolute left-1/2 top-16 md:top-20 -translate-x-1/2 w-[350px] h-[260px] md:w-[650px] md:h-[290px]">
+          <div className="absolute left-[0%] top-[18%] h-24 w-24 md:h-32 md:w-32 rounded-full border bg-cream p-2 rotate-[-14deg] shadow-[0_8px_0_hsl(var(--rose-deep)/0.55)]" style={{ borderColor: "hsl(var(--sage-deep))" }}>
+            <div className="flex h-full w-full flex-col items-center justify-center rounded-full border border-dashed border-sage-deep text-center text-sage-deep">
+              <span className="font-display text-xl md:text-3xl leading-none">S</span>
+              <span className="mt-1 text-[6px] uppercase tracking-[0.15em]">Salve Maison</span>
+            </div>
+          </div>
+          <a
+            href={`https://instagram.com/${SALVE.instagram}`}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute left-[18%] top-[4%] rounded-full bg-cream px-4 py-2 md:px-6 md:py-3 font-display text-base md:text-xl text-sage-deep rotate-[-9deg] hover:rotate-0 transition-transform"
+          >
+            Instagram
+          </a>
+          <Link
+            to="/services"
+            className="absolute right-[-2%] top-[11%] rounded-full bg-cream px-4 py-2 md:px-6 md:py-3 font-display text-base md:text-xl text-sage-deep rotate-[12deg] hover:rotate-0 transition-transform"
+          >
+            Treatments
+          </Link>
+          <a
+            href={waLink()}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute left-[20%] top-[47%] rounded-full bg-cream px-4 py-2 md:px-6 md:py-3 font-display text-base md:text-xl text-sage-deep rotate-[7deg] hover:rotate-0 transition-transform"
+          >
+            <WhatsAppIcon className="mr-2 inline-block h-4 w-4 align-[-0.12em]" /> WhatsApp
+          </a>
+          <Link
+            to="/packages"
+            className="absolute left-[48%] top-[62%] rounded-full bg-cream px-4 py-2 md:px-6 md:py-3 font-display text-base md:text-xl text-sage-deep rotate-[-10deg] hover:rotate-0 transition-transform"
+          >
+            Packages
+          </Link>
+          <div className="absolute right-[2%] top-[46%] h-24 w-24 md:h-32 md:w-32 rounded-full border bg-rose p-2 rotate-[12deg] shadow-[0_8px_0_hsl(var(--cream)/0.28)]" style={{ borderColor: "hsl(var(--sage-deep))" }}>
+            <div className="flex h-full w-full flex-col items-center justify-center rounded-full border border-dashed border-sage-deep text-center text-sage-deep">
+              <span className="font-display text-xl md:text-3xl leading-none">SM</span>
+              <span className="mt-1 text-[6px] uppercase tracking-[0.12em]">Rest well</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="border-t border-[#f5f0e7]/25">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-6 md:py-7 grid md:grid-cols-[1fr_auto] gap-5 items-end text-[#f5f0e7]/65">
+          <p className="max-w-2xl text-xs leading-relaxed">
+            Salve Maison is a quiet wellness house in Lekki, made for slower mornings, softer evenings and the restorative rituals in between.
+          </p>
+          <p className="text-[8px] uppercase tracking-[0.16em] md:text-right">
+            {SALVE.location} · Private care, unhurried time
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

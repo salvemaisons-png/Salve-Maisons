@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 38% 96%;
+    --foreground: 112 13% 18%;
+
+    --card: 40 42% 98%;
+    --card-foreground: 112 13% 18%;
+
+    --popover: 40 42% 98%;
+    --popover-foreground: 112 13% 18%;
+
+    --primary: 111 19% 37%;
+    --primary-foreground: 40 42% 97%;
+
+    --secondary: 351 29% 78%;
+    --secondary-foreground: 350 22% 25%;
+
+    --muted: 42 27% 91%;
+    --muted-foreground: 108 7% 39%;
+
+    --accent: 352 37% 91%;
+    --accent-foreground: 350 22% 28%;
+
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 38 18% 84%;
+    --input: 38 18% 84%;
+    --ring: 111 19% 37%;
+
+    --radius: 0rem;
+
+    /* Brand palette */
+    --sage: 111 19% 37%;
+    --sage-deep: 112 24% 21%;
+    --sage-soft: 108 22% 86%;
+    --rose: 351 29% 72%;
+    --rose-deep: 350 22% 47%;
+    --rose-soft: 351 38% 92%;
+    --cream: 40 43% 94%;
+
+    --gradient-hero: linear-gradient(160deg, hsl(var(--sage-deep) / 0.8), hsl(var(--sage) / 0.58) 52%, hsl(var(--sage-deep) / 0.86));
+    --gradient-soft: linear-gradient(135deg, hsl(var(--rose-soft)), hsl(var(--cream)) 52%, hsl(var(--sage-soft)));
+    --shadow-soft: 0 20px 52px -26px hsl(var(--sage-deep) / 0.46);
+
+    --sidebar-background: 36 40% 97%;
+    --sidebar-foreground: 100 8% 22%;
+    --sidebar-primary: 108 16% 42%;
+    --sidebar-primary-foreground: 36 45% 97%;
+    --sidebar-accent: 355 40% 92%;
+    --sidebar-accent-foreground: 350 25% 28%;
+    --sidebar-border: 36 20% 87%;
+    --sidebar-ring: 108 16% 42%;
+  }
+
+  .dark {
+    --background: 108 12% 9%;
+    --foreground: 36 30% 92%;
+
+    --card: 108 12% 13%;
+    --card-foreground: 36 30% 92%;
+
+    --popover: 108 12% 13%;
+    --popover-foreground: 36 30% 92%;
+
+    --primary: 108 20% 58%;
+    --primary-foreground: 108 18% 12%;
+
+    --secondary: 355 20% 32%;
+    --secondary-foreground: 36 30% 92%;
+
+    --muted: 108 10% 18%;
+    --muted-foreground: 36 12% 62%;
+
+    --accent: 355 18% 26%;
+    --accent-foreground: 355 40% 86%;
+
+    --destructive: 0 62% 38%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 108 10% 22%;
+    --input: 108 10% 22%;
+    --ring: 108 20% 58%;
+
+    --sage-soft: 108 12% 22%;
+    --rose-soft: 355 15% 24%;
+    --cream: 108 12% 13%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(circle at 8% 18%, hsl(var(--rose-soft) / 0.38), transparent 24rem), radial-gradient(circle at 92% 74%, hsl(var(--sage-soft) / 0.26), transparent 28rem);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .reference-footer {
+    background-color: hsl(var(--sage-deep)) !important;
+    color: hsl(var(--cream));
+  }
+
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .kicker {
+    @apply text-[10px] uppercase tracking-[0.35em] font-medium;
+  }
+
+  .bg-gradient-soft {
+    background-image: var(--gradient-soft);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .animate-float-slow {
+    animation: float-slow 11s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: float-reverse 14s ease-in-out infinite;
+  }
+
+  .lift-on-hover {
+    transition: transform 300ms ease, box-shadow 300ms ease;
+  }
+
+  .lift-on-hover:hover {
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-5px);
+  }
+
+  .treatment-grid > article + article {
+    border-top: 1px solid hsl(var(--border));
+  }
+
+  @media (min-width: 640px) {
+    .treatment-grid > article {
+      border-top: 0;
+    }
+
+    .treatment-grid > article:nth-child(n + 3) {
+      border-top: 1px solid hsl(var(--border));
+    }
+
+    .treatment-grid > article:nth-child(even) {
+      border-left: 1px solid hsl(var(--border));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .treatment-grid > article {
+      border-top: 0;
+      border-left: 0;
+    }
+
+    .treatment-grid > article:nth-child(n + 4) {
+      border-top: 1px solid hsl(var(--border));
+    }
+
+    .treatment-grid > article:not(:nth-child(3n + 1)) {
+      border-left: 1px solid hsl(var(--border));
+    }
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -18px, 0) scale(1.04); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(14px, 16px, 0) scale(0.96); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
