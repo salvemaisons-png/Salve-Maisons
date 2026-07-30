@@ -76,6 +76,7 @@ const Index = () => {
                 alt="Therapist preparing a mobile massage setup"
                 width={1200}
                 height={900}
+                loading="lazy"
                 className="absolute left-[18%] top-[8%] h-[84%] w-[30%] rounded-[50%] object-cover"
               />
               <img
@@ -83,6 +84,7 @@ const Index = () => {
                 alt="Prenatal massage treatment by Salve Maison"
                 width={1600}
                 height={1100}
+                loading="lazy"
                 className="absolute left-[51%] top-[13%] h-[74%] w-[18%] rounded-[50%] object-cover"
               />
               <img
@@ -90,6 +92,7 @@ const Index = () => {
                 alt="Salve Maison spa essentials"
                 width={1200}
                 height={900}
+                loading="lazy"
                 className="absolute right-[4%] top-[17%] h-[65%] w-[13%] rounded-[50%] object-cover opacity-75"
               />
               <Link

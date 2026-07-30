@@ -22,6 +22,7 @@ const About = () => (
         alt="Salve Maison therapist arriving for a mobile spa appointment"
         width={1600}
         height={1100}
+        loading="eager"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0" style={{ backgroundImage: "var(--gradient-hero)" }} />
